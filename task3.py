@@ -10,9 +10,11 @@ while True:
             time = [num for num in temp[-2].split(':')]  # Получаем строковые значения времени
             hour = int(time[0])  # Получаем целочисленное значение часов
             if hour + int(temp[-1]) >= 10:  # Формируем строку с актуальным временем
-                temp[-1] = f'{(int(temp[-1]) + int(time[0])) % 24}:{time[1]}:{time[2]}'
+                temp[-1] = ('0' if (temp_time := (
+                        int(temp[-1]) + int(time[0]))) % 24 < 10 else '') + f'{temp_time % 24}:{time[1]}:{time[2]}'
             else:
-                temp[-1] = f'{(int(temp[-1]) + int(time[0])) % 24}:{time[1]}:{time[2]}'
+                temp[-1] = ('0' if (time_time := (
+                            int(temp[-1]) + int(time[0]))) % 24 < 10 else '') + f'{temp_time % 24}:{time[1]}:{time[2]}'
             print(
                 f'В каюте {cabinNumber} восстановлено время (время остановки: {temp[-2]}). Актуальное время: {temp[-1]}')  # Выводим результат
             break  # Завершаем поиск
