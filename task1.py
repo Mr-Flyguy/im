@@ -1,7 +1,8 @@
 austronaut_time = open('astronaut_time.txt',
                        encoding='utf-8').read().splitlines()  # Создаём переменную для чтения таблицы
 new_time = open('new_time.csv', 'w')  # Создаём переменную для записи в новую таблицу
-new_time.write(austronaut_time[0].replace('>', ',').replace('count', 'timeNow') + '\n')  # Добавляем в таблицу строку-заголовок
+new_time.write(austronaut_time[0].replace('>', ',')
+               .replace('count', 'timeNow') + '\n')  # Добавляем в таблицу строку-заголовок
 for i in austronaut_time[1:]:  # Проходимя по таблице
     temp = i.split('>')  # Разбиваем строку на элементы
     time = [num for num in temp[-2].split(':')]  # Получаем значения часов, минут и секунд в строковом виде
