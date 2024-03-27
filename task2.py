@@ -34,4 +34,5 @@ for temp in austronaut_time:  # Проходимя по таблице
             f'{temp_time % 24}:{time[1]}:{time[2]}')  # Добавляем актуальное время в список
 for i in range(3):
     print(
-        f'На станции {sorted_austronaut_time[i][1]} в каюте {sorted_austronaut_time[i][2]} восстановлено время. Актуальное время: {actual_austronaut_times[i]}')  # Выводим результат
+        f'На станции {sorted_austronaut_time[i][1]} в каюте {sorted_austronaut_time[i][2]} восстановлено время.'
+        f' Актуальное время: {actual_austronaut_times[i]}')  # Выводим результат
