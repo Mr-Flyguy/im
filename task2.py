@@ -14,8 +14,6 @@ def ins_sort(array: list) -> list:
                 break
     return array
 
-    return array
-
 
 austronaut_time = open('astronaut_time.txt',
                        encoding='utf-8').read().splitlines()  # Создаём переменную для чтения таблицы
