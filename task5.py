@@ -6,4 +6,5 @@ for i in austronaut_time[1:]:  # Проходим по списку
     hash[temp[2]] = {'Номер часов': temp[0], 'Номер станции': temp[1], 'Время остановки часов': temp[3],
                      'Кол-во часов простоя': temp[4]}  # Формируем элемент хэш-таюдицы
 for i in range(10):
-    print(hash[austronaut_time[1:][i].split('>')[2]])  # Выводим информацию о первых 10 каютах
+    print(f'Каюта - {austronaut_time[1:][i].split('>')[2]}, '
+          f'информация - {hash[austronaut_time[1:][i].split('>')[2]]}')  # Выводим информацию о первых 10 каютах
