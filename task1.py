@@ -7,7 +7,7 @@ for i in austronaut_time[1:]:  # Проходимя по таблице
     time = [num for num in temp[-2].split(':')]  # Получаем значения часов, минут и секунд в строковом виде
     hour = int(time[0])  # Переводим значения часов в целочисленный тип
     if hour + int(temp[-1]) >= 10:  # Формируем актуальное время
-        temp[-1] = ('0' if (temp_time:=(int(temp[-1]) + int(
+        temp[-1] = ('0' if (temp_time := (int(temp[-1]) + int(
             time[0])) % 24) < 10 else '') + f'{temp_time%24}:{time[1]}:{time[2]}'
     else:
         temp[-1] = ('0' if (temp_time :=(int(temp[-1]) + int(
