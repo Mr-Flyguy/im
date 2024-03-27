@@ -26,10 +26,12 @@ for temp in austronaut_time:  # Проходимя по таблице
     time = [num for num in temp[-2].split(':')]  # Получаем значения часов, минут и секунд в строковом виде
     hour = int(time[0])  # Переводим значения часов в целочисленный тип
     if hour + int(temp[-1]) >= 10:  # Формируем актуальное время
-        actual_austronaut_times.append(('0' if (temp_time:=(int(temp[-1]) + int(time[0])))%24 < 10 else '') +f'{temp_time % 24}:{time[1]}:{time[2]}')
+        actual_austronaut_times.append(('0' if (temp_time := (
+                int(temp[-1]) + int(time[0]))) % 24 < 10 else '') + f'{temp_time % 24}:{time[1]}:{time[2]}')
     else:
         actual_austronaut_times.append(
-            ('0' if (temp_time:= (int(temp[-1]) + int(time[0]))) % 24 < 10 else '') +f'{(int(temp[-1]) + int(time[0])) % 24}:{time[1]}:{time[2]}')  # Добавляем актуальное время в список
+            ('0' if (temp_time := (int(temp[-1]) + int(time[0]))) % 24 < 10 else '') +
+            f'{temp_time % 24}:{time[1]}:{time[2]}')  # Добавляем актуальное время в список
 for i in range(3):
     print(
         f'На станции {sorted_austronaut_time[i][1]} в каюте {sorted_austronaut_time[i][2]} восстановлено время. Актуальное время: {actual_austronaut_times[i]}')  # Выводим результат
